@@ -28,6 +28,8 @@ namespace SuperShop
             // Quando alguem perguntar sobre o "SeedDb" ele cria 
             services.AddTransient<SeedDb>();
 
+            services.AddScoped<IRepository, Repository>();
+
             services.AddControllersWithViews();
         }
 
