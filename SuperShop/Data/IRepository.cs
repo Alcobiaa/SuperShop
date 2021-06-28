@@ -5,21 +5,21 @@ using SuperShop.Data.Entities;
 
 namespace SuperShop.Data
 {
-    public interface IRepository
-    {
-        void AddProduct(Product product);
+    //public interface IRepository
+    //{
+    //    void AddProduct(Product product);
 
-        Product GetProduct(int id);
+    //    Product GetProduct(int id);
 
-        IEnumerable<Product> GetProducts();
+    //    IEnumerable<Product> GetProducts();
 
-        bool ProducExists(int id);
+    //    bool ProducExists(int id);
 
-        void RemoveProduct(Product product);
+    //    void RemoveProduct(Product product);
 
-        Task<bool> SaveAllAsync();
+    //    Task<bool> SaveAllAsync();
 
-        void UpdateProduct(Product product);
+    //    void UpdateProduct(Product product);
 
-    }
+    //}
 }
