@@ -16,7 +16,7 @@ namespace SuperShop.Helpers
 
             string path = Path.Combine(
             Directory.GetCurrentDirectory(),
-            "wwwroot\\images\\{folder}",
+            $"wwwroot\\images\\{folder}",
             file);
 
             using (FileStream stream = new FileStream(path, FileMode.Create))
