@@ -8,6 +8,12 @@ namespace SuperShop.Data
     {
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrdersDetails { get; set; }
+
+        public DbSet<OrderDetailTemp> OrdersDetailsTemp { get; set; }
+
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }

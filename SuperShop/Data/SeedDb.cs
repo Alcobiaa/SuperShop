@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SuperShop.Data.Entities;
 using SuperShop.Helpers;
 
@@ -25,7 +26,7 @@ namespace SuperShop.Data
         public async Task SeedAsync()
         {
             // Verifica se já existe base de dados, caso nao exista cria
-            await _context.Database.EnsureCreatedAsync();
+            await _context.Database.MigrateAsync();
 
             await _userHelper.CheckRoleAsync("Admin");
             await _userHelper.CheckRoleAsync("Customer");
