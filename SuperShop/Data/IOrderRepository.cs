@@ -10,5 +10,7 @@ namespace SuperShop.Data
     {
         Task<IQueryable<Order>> GetOrderAsycn(string userName);
 
+        Task<IQueryable<OrderDetailTemp>> GetDetailsTempsAsycn(string userName);
+
     }
 }
