@@ -15,12 +15,13 @@ namespace SuperShop.Data
 
         public DbSet<OrderDetailTemp> OrdersDetailsTemp { get; set; }
 
+        public DbSet<Country> Countries { get; set; }
+
+        public DbSet<City> Cities { get; set; } 
+
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
-
-
-
 
         //Habilitar a regra de apagar em cascata (Cascade Delete Rule) 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)

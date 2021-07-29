@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuperShop.Data;
 
 namespace SuperShop.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210729102831_ChangeDeliveryData")]
+    partial class ChangeDeliveryData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,45 +152,6 @@ namespace SuperShop.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("SuperShop.Data.Entities.City", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.ToTable("Cities");
-                });
-
-            modelBuilder.Entity("SuperShop.Data.Entities.Country", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Countries");
-                });
-
             modelBuilder.Entity("SuperShop.Data.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -316,13 +279,6 @@ namespace SuperShop.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("Address")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -335,12 +291,10 @@ namespace SuperShop.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -376,8 +330,6 @@ namespace SuperShop.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CityId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -441,13 +393,6 @@ namespace SuperShop.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SuperShop.Data.Entities.City", b =>
-                {
-                    b.HasOne("SuperShop.Data.Entities.Country", null)
-                        .WithMany("Cities")
-                        .HasForeignKey("CountryId");
-                });
-
             modelBuilder.Entity("SuperShop.Data.Entities.Order", b =>
                 {
                     b.HasOne("SuperShop.Data.Entities.User", "User")
@@ -492,22 +437,6 @@ namespace SuperShop.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("SuperShop.Data.Entities.User", b =>
-                {
-                    b.HasOne("SuperShop.Data.Entities.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
-                });
-
-            modelBuilder.Entity("SuperShop.Data.Entities.Country", b =>
-                {
-                    b.Navigation("Cities");
                 });
 
             modelBuilder.Entity("SuperShop.Data.Entities.Order", b =>
