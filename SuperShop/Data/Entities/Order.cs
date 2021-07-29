@@ -42,7 +42,7 @@ namespace SuperShop.Data.Entities
 
 
         [Display(Name = "Order date")]
-        [DisplayFormat(DataFormatString = "{0:mm/dd/yyyy HH:mm}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy HH:mm}", ApplyFormatInEditMode = false)]
         public DateTime? OrderDateLocal => this.OrderDate == null ? null : this.OrderDate.ToLocalTime();
 
     }
