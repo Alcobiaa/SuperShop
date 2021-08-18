@@ -13,7 +13,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="ImageId" />
-            
+
             <partial name="_Products" />
 
             <div class="form-group">
@@ -24,10 +24,11 @@
     </div>
 
     <div class="col-md-4">
-            <img src="@Url.Content(Model.ImageFullPath)" alt="Image" style="width:100px; height:150px; max-width:100%; height: auto" />
+        <img src="@Url.Content(Model.ImageFullPath)" alt="Image" style="width:100px; height:150px; max-width:100%; height: auto" />
     </div>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationCurrencyPartial");}
 }
