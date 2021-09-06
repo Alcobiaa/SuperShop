@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperShop", "SuperShop\SuperShop.csproj", "{632FFEC3-05B9-4A53-A260-52A4959AEE6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperShop.Prism", "SuperShop.Prism\SuperShop.Prism\SuperShop.Prism.csproj", "{63E1F644-52EF-4021-AFD1-BFE06F7CFCF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperShop.Prism", "SuperShop.Prism\SuperShop.Prism\SuperShop.Prism.csproj", "{63E1F644-52EF-4021-AFD1-BFE06F7CFCF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperShop.Prism.Android", "SuperShop.Prism\SuperShop.Prism.Android\SuperShop.Prism.Android.csproj", "{E25AAFF6-FD5A-4ED0-8FF8-B72C937A1DDD}"
 EndProject
@@ -136,6 +136,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_PrefixTranslations = False
 		SolutionGuid = {6735BECE-D428-47C1-A11B-E9FA27B660D0}
 	EndGlobalSection
 EndGlobal
