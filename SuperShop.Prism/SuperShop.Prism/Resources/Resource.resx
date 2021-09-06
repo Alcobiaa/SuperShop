@@ -133,4 +133,10 @@
   <data name="LastPurchase" xml:space="preserve">
     <value>Last Purchase</value>
   </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>Is Avaible</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
 </root>

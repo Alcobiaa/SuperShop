@@ -41,6 +41,10 @@ namespace SuperShop.Prism.Helpers
 
         public static string LastSale => Resource.LastSale;
 
+        public static string Stock => Resource.Stock;
+
+        public static string IsAvailable => Resource.IsAvailable;
+
 
     }
 }
