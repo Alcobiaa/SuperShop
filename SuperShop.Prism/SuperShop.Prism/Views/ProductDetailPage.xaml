@@ -2,8 +2,100 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="SuperShop.Prism.Views.ProductDetailPage4"
              Title="{Binding Title}">
-  
+
+    <ScrollView>
+        <StackLayout Padding="10">
+            <ffimageloading:CachedImage
+                Aspect="AspectFit"
+                CacheDuration="50"
+                RetryCount="3"
+                RetryDelay="600"
+                Source="{Binding Product.ImageFullPath}"
+                WidthRequest="200" />
+            <Grid Padding="10,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Name" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Product.Name}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Price" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Product.Price, StringFormat='{0:C2}'}" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Last Purchase" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding Product.LastPurchase}" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Last Sale" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding Product.LastSale}" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="IsAvailable"
+                    VerticalOptions="Center" />
+                <CheckBox
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalOptions="Start"
+                    IsChecked="{Binding Product.IsAvailable}"
+                    IsEnabled="False" />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Stock" />
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Text="{Binding Product.Stock, StringFormat='{0:N2}'}" />
+            </Grid>
+
+            <Button
+                BackgroundColor="Navy"
+                Command="{Binding AddToCartBinding}"
+                CornerRadius="10"
+                Text="AddToCart"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
