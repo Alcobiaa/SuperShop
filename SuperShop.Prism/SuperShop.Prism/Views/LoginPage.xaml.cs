@@ -1,9 +1,10 @@
-﻿
+﻿using Xamarin.Forms;
+
 namespace SuperShop.Prism.Views
 {
-    public partial class MainPage
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
         }

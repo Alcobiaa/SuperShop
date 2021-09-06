@@ -1,11 +1,7 @@
 ﻿using MailKit.Net.Smtp;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SuperShop.Helpers
 {
