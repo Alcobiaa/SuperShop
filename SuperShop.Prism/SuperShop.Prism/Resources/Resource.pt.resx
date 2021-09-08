@@ -139,4 +139,16 @@
   <data name="Stock" xml:space="preserve">
     <value>Quantidade</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iníciar sessão</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>Modificar utilizador</value>
+  </data>
+  <data name="ShowPurchaseHistory" xml:space="preserve">
+    <value>Mostrar histórico de compras</value>
+  </data>
+  <data name="ShowShoppingCar" xml:space="preserve">
+    <value>Mostrar carro de compras!</value>
+  </data>
 </root>

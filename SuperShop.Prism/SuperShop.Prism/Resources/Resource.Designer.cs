@@ -133,6 +133,24 @@ namespace SuperShop.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modify User.
+        /// </summary>
+        internal static string ModifyUser {
+            get {
+                return ResourceManager.GetString("ModifyUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Name {
@@ -174,6 +192,24 @@ namespace SuperShop.Prism.Resources {
         internal static string SearchProduct {
             get {
                 return ResourceManager.GetString("SearchProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Purchase History.
+        /// </summary>
+        internal static string ShowPurchaseHistory {
+            get {
+                return ResourceManager.GetString("ShowPurchaseHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Shopping Car.
+        /// </summary>
+        internal static string ShowShoppingCar {
+            get {
+                return ResourceManager.GetString("ShowShoppingCar", resourceCulture);
             }
         }
         
